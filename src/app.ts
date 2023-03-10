@@ -20,7 +20,7 @@ app.get('/seamless', (_req, res) => {
 app.post('/notifications', async (req, res) => {
   try {
     const message = req.body.message;
-    await axios.post(NOTIFICATION_ENDPOINT, { message: message + '.' });
+    await axios.post(NOTIFICATION_ENDPOINT, { message: message + '!!!!' });
 
     res.status(200).json({ message: 'Notification was sent to the customer' });
   } catch (error) {
