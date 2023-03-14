@@ -1,8 +1,11 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 import express from 'express';
 import cors from 'cors';
 import axios from 'axios';
 
-const NOTIFICATION_ENDPOINT = 'https://eon8yn3r9rzmfky.m.pipedream.net';
+const NOTIFICATION_ENDPOINT = process.env.NOTIFICATION_ENDPOINT || '';
 const app = express();
 
 app.use(cors());
@@ -16,11 +19,11 @@ app.get('/seamless', (_req, res) => {
   res.status(200).send('Seamless');
 });
 
-// Forward notification message to endoint
+// Forward notification message to endpoint
 app.post('/notifications', async (req, res) => {
   try {
     const message = req.body.message;
-    await axios.post(NOTIFICATION_ENDPOINT, { message: message + '!!!!' });
+    await axios.post(NOTIFICATION_ENDPOINT, { message: message + '!' });
 
     res.status(200).json({ message: 'Notification was sent to the customer' });
   } catch (error) {
