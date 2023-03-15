@@ -7,7 +7,7 @@ COPY package*.json ./
 FROM base AS build
 RUN npm install
 USER node
-COPY --chown=node:node . .
+COPY . .
 RUN npm run build
 
 # Build for production
@@ -17,7 +17,7 @@ RUN cp -R node_modules prod_node_modules
 
 # Final production layer
 FROM base as prod
-COPY --chown=node:node --from=prod-build /app/prod_node_modules /app/node_modules
-COPY --chown=node:node --from=build  /app/dist /app/dist
+COPY --from=prod-build /app/prod_node_modules /app/node_modules
+COPY --from=build  /app/dist /app/dist
 EXPOSE 3000
 CMD ["npm", "start"]
