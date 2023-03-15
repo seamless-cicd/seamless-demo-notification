@@ -6,7 +6,6 @@ COPY package*.json ./
 # Build stage
 FROM base AS build
 RUN npm install
-USER node
 COPY . .
 RUN npm run build
 
