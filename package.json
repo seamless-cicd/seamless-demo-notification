@@ -10,9 +10,9 @@
     "test": "jest --verbose",
     "test:watch": "jest --watchAll --verbose",
     "lint": "eslint src/**/*.ts",
-    "docker:build": "docker build -t jasonherngwang/seamless-demo-notification:latest .",
-    "docker:run": "docker run -d jasonherngwang/seamless-demo-notification:latest",
-    "docker:push": "docker push jasonherngwang/seamless-demo-notification:latest"
+    "docker:run": "docker run -d public.ecr.aws/z4c1u6t7/seamless-demo-notification:1",
+    "docker:build": "docker build -t public.ecr.aws/z4c1u6t7/seamless-demo-notification:1 .",
+    "docker:push": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws && docker push public.ecr.aws/z4c1u6t7/seamless-demo-notification:1"
   },
   "author": "Seamless",
   "license": "ISC",
