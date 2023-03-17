@@ -6,6 +6,7 @@ import cors from 'cors';
 import axios from 'axios';
 
 const NOTIFICATION_ENDPOINT = process.env.NOTIFICATION_ENDPOINT || '';
+
 const app = express();
 
 app.use(cors());

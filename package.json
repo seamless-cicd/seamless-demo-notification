@@ -10,9 +10,9 @@
     "test": "jest --verbose",
     "test:watch": "jest --watchAll --verbose",
     "lint": "eslint src/**/*.ts",
-    "docker:build": "docker build -t seamless-demo-notification .",
-    "docker:run": "BASH_env=.env docker run seamless-demo-notification",
-    "docker:push": "BASH_env=.env docker push seamless-demo-notification:latest"
+    "docker:build": "docker build -t jasonherngwang/seamless-demo-notification:latest .",
+    "docker:run": "docker run -d jasonherngwang/seamless-demo-notification:latest",
+    "docker:push": "docker push jasonherngwang/seamless-demo-notification:latest"
   },
   "author": "Seamless",
   "license": "ISC",
