@@ -5,7 +5,7 @@ Simulates a microservice architecture with 3 services that communicate with each
 1. Payment Service
 2. Notification Service
 
-Both are intended to be deployed to a AWS Fargate cluster and communicate via Service Connect.
+Both are intended to be deployed to a Fargate cluster and communicate via Service Connect.
 
 ## This Repo is Microservice 2: Notification Service
 
