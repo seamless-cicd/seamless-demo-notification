@@ -1,5 +1,5 @@
 {
-  "name": "seamless-demo-notification",
+  "name": "seamless-demo-prod-notification",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,9 +10,10 @@
     "test": "jest --verbose",
     "test:watch": "jest --watchAll --verbose",
     "lint": "eslint src/**/*.ts",
-    "docker:run": "docker run -d public.ecr.aws/z4c1u6t7/seamless-demo-notification:1",
-    "docker:build": "docker build -t public.ecr.aws/z4c1u6t7/seamless-demo-notification:1 .",
-    "docker:push": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws && docker push public.ecr.aws/z4c1u6t7/seamless-demo-notification:1"
+    "docker:run": "docker run -d jasonherngwang/seamless-demo-prod-notification:1",
+    "docker:build": "docker build -t jasonherngwang/seamless-demo-prod-notification:1 .",
+    "docker:push": "docker push jasonherngwang/seamless-demo-prod-notification:1",
+    "build-push": "npm run docker:build && npm run docker:push"
   },
   "author": "Seamless",
   "license": "ISC",

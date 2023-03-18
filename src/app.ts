@@ -13,21 +13,16 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (_req, res) => {
-  res.status(200).send('Hello');
+  res.status(200).send('Notification Service');
 });
 
 // Forward notification message to endpoint
 app.post('/notifications', async (req, res) => {
   try {
-    console.log('received data:', req.body);
-
     const message = req.body.message;
-    const response = await axios.post(NOTIFICATION_ENDPOINT, {
-      message: message + '!',
+    await axios.post(NOTIFICATION_ENDPOINT, {
+      message,
     });
-
-    console.log('response:', response);
-
     res.status(200).json({ message: 'Notification was sent to the customer' });
   } catch (error) {
     if (error instanceof Error) {

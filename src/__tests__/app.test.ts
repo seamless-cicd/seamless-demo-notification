@@ -1,10 +1,10 @@
 import request from 'supertest';
 import app from '../app';
 
-describe('GET /seamless', () => {
-  test('responds with 200 and "Seamless" on /seamless', async () => {
-    const response = await request(app).get('/seamless');
+describe('GET /', () => {
+  test('responds with 200 and "Notification Service" on /', async () => {
+    const response = await request(app).get('/');
     expect(response.status).toBe(200);
-    expect(response.text).toBe('Seamless');
+    expect(response.text).toBe('Notification Service');
   });
 });
