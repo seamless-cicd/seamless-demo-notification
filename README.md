@@ -31,5 +31,3 @@ Then sends a POST request to the customer (a RequestBin):
     "message": "You paid $42. Thanks for being a customer!"
 }
 ```
-
-...
