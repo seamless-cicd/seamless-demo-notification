@@ -1,5 +1,5 @@
 {
-  "name": "seamless-demo-prod-notification",
+  "name": "seamless-demo-notification",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,9 +10,9 @@
     "test": "jest --verbose",
     "test:watch": "jest --watchAll --verbose",
     "lint": "eslint src/**/*.ts",
-    "docker:run": "docker run -d 697645747316.dkr.ecr.us-east-1.amazonaws.com/seamless-cicd/seamless-demo-prod-notification:1",
-    "docker:build": "docker build -t 697645747316.dkr.ecr.us-east-1.amazonaws.com/seamless-cicd/seamless-demo-prod-notification:1 -t 697645747316.dkr.ecr.us-east-1.amazonaws.com/seamless-cicd/seamless-demo-prod-notification:latest .",
-    "docker:push": "aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 697645747316.dkr.ecr.us-east-1.amazonaws.com && docker push 697645747316.dkr.ecr.us-east-1.amazonaws.com/seamless-cicd/seamless-demo-prod-notification:1 && docker push 697645747316.dkr.ecr.us-east-1.amazonaws.com/seamless-cicd/seamless-demo-prod-notification:latest",
+    "docker:run": "docker run -d 697645747316.dkr.ecr.us-east-1.amazonaws.com/seamless-cicd/seamless-demo-notification:1",
+    "docker:build": "docker build -t 697645747316.dkr.ecr.us-east-1.amazonaws.com/seamless-cicd/seamless-demo-notification:1 -t 697645747316.dkr.ecr.us-east-1.amazonaws.com/seamless-cicd/seamless-demo-notification:latest .",
+    "docker:push": "aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 697645747316.dkr.ecr.us-east-1.amazonaws.com && docker push 697645747316.dkr.ecr.us-east-1.amazonaws.com/seamless-cicd/seamless-demo-notification:1 && docker push 697645747316.dkr.ecr.us-east-1.amazonaws.com/seamless-cicd/seamless-demo-notification:latest",
     "build-push": "npm run docker:build && npm run docker:push"
   },
   "author": "Seamless",
